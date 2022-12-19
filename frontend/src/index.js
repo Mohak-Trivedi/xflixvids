@@ -4,9 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Added: To be able to use routing in App.js
+import { BrowserRouter } from "react-router-dom";
+
+// Added: To add theme
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from "@mui/system";
+import theme from "./theme";
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
